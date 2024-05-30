@@ -15,3 +15,16 @@ def ask_openai(question):
 
     answer = response.choices[0].text.strip()
     return answer
+
+def main():
+    print("Welcome to your personal assistant! Type 'exit' to end the conversation.")
+    while True:
+        question = input("You: ")
+        if question.lower() == 'exit':
+            print("Goodbye!")
+            break
+        answer = ask_openai(question)
+        print(f"Assistant: {answer}")
+
+if __name__ == "__main__":
+    main()
